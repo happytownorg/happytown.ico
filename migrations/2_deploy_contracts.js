@@ -4,8 +4,8 @@ var debug = true;
 var showABI = true;
 var showURL = true;
 var showTIME = true;
-var debugTIME = true;
-var devWallet = true;
+var debugTIME = false;
+var devWallet = false;
 
 const BigNumber = web3.BigNumber;
 
@@ -51,7 +51,7 @@ async function Deploy(deployer, network, accounts) {
     _startTimeIco = _startTimeRound3 + duration.minutes(10);
     _endTime =  _startTimeIco + duration.minutes(10);
   } else {
-    _startTimeRound1 = 1519862400;  // 01.03.2018 00:00:00 GMT
+    _startTimeRound1 = 1521072000;  // 15.03.2018 00:00:00 GMT
     _startTimeRound2 = _startTimeRound1 + duration.days(7);
     _startTimeRound3 = _startTimeRound2 + duration.days(7);
     _startTimeIco = _startTimeRound3 + duration.days(7);

@@ -2,7 +2,7 @@
 
 ### HappytownCrowdsale
 
-`https://github.com/happytown/happytown.ico.git`
+`git clone https://github.com/happytownorg/happytown.ico.git`
 
 `cd ./happytown.ico`
 
@@ -20,10 +20,10 @@
 
 ### Deploy for live network
 
-`truffle migration --network live`
+`truffle migration --network live_main`
 
 ### Tools Used:
 
-https://github.com/OpenZeppelin/zeppelin-solidity
+https://github.com/OpenZeppelin/zeppelin-solidity <br>
 https://github.com/oraclesorg/oracles-combine-solidity/
 
