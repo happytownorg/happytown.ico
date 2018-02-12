@@ -49,3 +49,4 @@ typings/
 .vscode
 contracts/tmp
 utils/
+.DS_Store
