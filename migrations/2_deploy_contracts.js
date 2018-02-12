@@ -24,25 +24,31 @@ module.exports = function(deployer, network, accounts) {
 
 async function Deploy(deployer, network, accounts) {
   
-  if (devWallet) {
-    const _multisigWallet = '0xA96811041dDFF5041ef3Db4AF35C6C0B082740a8';
-    const _companyWallet = '0x11D08ca3992f67414Fb5CB1B7B75Aa963D65e9F9';
-    const _teamWallet = '0xb2ed1C9C16E529f4184B3b83DF363c84fC5a87f6';
-    const _bountyWallet = '0x11B7Bf64632b1fea31c81c8DA7fcD1dC14019D25';
-  }
-  else {
-    const _multisigWallet = '0x63D6353f1F2c3ce1929F97bFFeded15d3e8C117A';
-    const _companyWallet = '0xb125B26CE1Ed76620765a1DD1A5473E4f2bF7265';
-    const _teamWallet = '0x4951A7dF4812a4F908EddE439202020A9adA89C6';
-    const _bountyWallet = '0x0Ce4184329B63F9fdc3E029D95c3646a08FAfAFd';
-  }
-  
   const _rate = 1000;
+
+  var _multisigWallet;
+  var _companyWallet;
+  var _teamWallet;
+  var _bountyWallet;
+  
   var _startTimeRound1;
   var _startTimeRound2;
   var _startTimeRound3;
   var _startTimeIco;
   var _endTime;
+
+  if (devWallet) {
+    _multisigWallet = '0xA96811041dDFF5041ef3Db4AF35C6C0B082740a8';
+    _companyWallet = '0x11D08ca3992f67414Fb5CB1B7B75Aa963D65e9F9';
+    _teamWallet = '0xb2ed1C9C16E529f4184B3b83DF363c84fC5a87f6';
+    _bountyWallet = '0x11B7Bf64632b1fea31c81c8DA7fcD1dC14019D25';
+  }
+  else {
+    _multisigWallet = '0x63D6353f1F2c3ce1929F97bFFeded15d3e8C117A';
+    _companyWallet = '0xb125B26CE1Ed76620765a1DD1A5473E4f2bF7265';
+    _teamWallet = '0x4951A7dF4812a4F908EddE439202020A9adA89C6';
+    _bountyWallet = '0x0Ce4184329B63F9fdc3E029D95c3646a08FAfAFd';
+  }
 
   if (debugTIME) {
     _startTimeRound1 = latestTime() + duration.minutes(1);
@@ -66,6 +72,7 @@ async function Deploy(deployer, network, accounts) {
     if (showTIME) console.log("HappytownCrowdsale startTimeRound2: ", _startTimeRound2);
     if (showTIME) console.log("HappytownCrowdsale startTimeRound3: ", _startTimeRound3);
     if (showTIME) console.log("HappytownCrowdsale startTimeIco: ", _startTimeIco);
+    if (showTIME) console.log("HappytownCrowdsale endTime: ", _endTime);
     if (debug) console.log("----------------------------------------------------------------------------------------------");
     if (debug) console.log("HappytownCrowdsale address: ", crowdsaleInstance.address);
     if (debug) console.log("HappytownCrowdsale token: ", await crowdsaleInstance.token.call());
